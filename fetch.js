@@ -424,6 +424,10 @@
       var request = new Request(input, init)
       var xhr = new XMLHttpRequest()
 
+      if (init.timeout) {
+          xhr.timeout = init.timeout;
+      }
+
       xhr.onload = function() {
         var options = {
           status: xhr.status,
